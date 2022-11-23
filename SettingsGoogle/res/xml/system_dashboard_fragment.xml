@@ -66,7 +66,7 @@
 
     </Preference>
 
-    <Preference
+<!--    <Preference
         android:icon="@drawable/ic_system_update"
         android:key="system_update_settings"
         android:order="-58"
@@ -78,7 +78,7 @@
         <intent
             android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
 
-    </Preference>
+    </Preference> -->
 
     <Preference
         android:fragment="com.android.settings.system.ResetDashboardFragment"
