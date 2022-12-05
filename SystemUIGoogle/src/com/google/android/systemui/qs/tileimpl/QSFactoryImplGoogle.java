@@ -24,6 +24,7 @@ import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AlarmTile;
+import com.android.systemui.qs.tiles.BatteryShareTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CameraToggleTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -76,6 +77,7 @@ import dagger.Lazy;
 @SysUISingleton
 public class QSFactoryImplGoogle extends QSFactoryImpl {
     private final Provider<BatterySaverTileGoogle> mBatterySaverTileGoogleProvider;
+    private final Provider<BatteryShareTile> mBatteryShareTileProvider;
     private final Provider<ReverseChargingTile> mReverseChargingTileProvider;
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
 
@@ -97,6 +99,7 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
             Provider<CastTile> castTileProvider,
             Provider<HotspotTile> hotspotTileProvider,
             Provider<BatterySaverTileGoogle> batterySaverTileGoogleProvider,
+            Provider<BatteryShareTile> batteryShareTileProvider,
             Provider<DataSaverTile> dataSaverTileProvider,
             Provider<NightDisplayTile> nightDisplayTileProvider,
             Provider<NfcTile> nfcTileProvider,
@@ -141,6 +144,7 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
                 castTileProvider,
                 hotspotTileProvider,
                 () -> batterySaverTileGoogleProvider.get(),
+                batteryShareTileProvider,
                 dataSaverTileProvider,
                 nightDisplayTileProvider,
                 nfcTileProvider,
@@ -170,6 +174,7 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
                 dataSwitchTileProvider);
         mReverseChargingTileProvider = reverseChargingTileProvider;
         mBatterySaverTileGoogleProvider = batterySaverTileGoogleProvider;
+        mBatteryShareTileProvider = batteryShareTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
     }
 
